@@ -26,15 +26,18 @@ class Player
   attr_reader :name
   attr_accessor :wins, :losses, :ties
 
-  def initialize(name:, wins:, losses:, ties:, :win_another_round)
+  def initialize(name:, wins:, losses:, ties:)
     @name = name
     @wins = wins
     @losses = losses
     @ties = ties
-    @win_another_round = win_another_round
   end
 
   def win_another_round
     @wins += 1
+  end
+
+  def lose_another_round
+    @losses += 1    
   end
 end
