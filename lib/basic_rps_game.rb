@@ -11,15 +11,8 @@ require 'pry'
 # paper > rock
 
 puts "ROCK.PAPER.SCISSORS.\n
-LET'S DO THIS."
+LET'S DO THIS.\n"
 
-puts "Player 1. Select rock, paper, or scissors."
-selection1 = gets.chomp.upcase
-
-puts "Player 2. Select rock, paper, or scissors."
-selection2 = gets.chomp.upcase
-
-#refactored
 
 def choose_winner(selection1, selection2)
   if selection1 == "rock" && selection2 == "scissors" || 
@@ -37,12 +30,29 @@ def choose_winner(selection1, selection2)
   result
   end
 end
+###########################################################
+def make_selection
+  selection = nil
+  while selection != "rock" && selection != "paper" && selection != "scissors"
+    puts "Hint: Type rock, paper, or scissors."
+    selection = gets.chomp
+  end
+  selection
+end
+
+# players make their selection by enterin rock, paper, or scissors
+puts "Player 1. Select rock, paper, or scissors."
+selection1 = make_selection
+
+puts "Player 2. Select rock, paper, or scissors."
+selection2 = make_selection
+
+
+result = choose_winner(selection1, selection2)
+puts result
+
 
 # binding.pry
 
 
 #currently doesn't display any victory messages, just ends after game without saying who won
-    
-    
-    
-    
