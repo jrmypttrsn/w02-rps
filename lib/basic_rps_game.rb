@@ -19,22 +19,27 @@ selection1 = gets.chomp.upcase
 puts "Player 2. Select rock, paper, or scissors."
 selection2 = gets.chomp.upcase
 
-if selection1 == "rock" && selection2 == "scissors"
-  puts "Player 1, WINS!"
-elsif selection1 == "scissors" && selection2 == "paper"
-  puts "Player 1, WINS!"
-elsif selection1 == "paper" && selection2 == "rock"
-  puts "Player 1, WINS!"
-elsif selection1 == "scissors" && selection2 == "rock"
-  puts "Player 2, WINS!"
-elsif selection1 == "paper" && selection2 == "scissors"
-  puts "Player 2, WINS!"
-elsif selection1 == "rock" && selection2 == "paper"
-  puts "Player 2, WINS!"
-elsif selection1 == selection2
-  puts "TIE. TRY AGAIN."
+#refactored
+
+def choose_winner(selection1, selection2)
+  if selection1 == "rock" && selection2 == "scissors" || 
+  elsif selection1 == "scissors" && selection2 == "paper" || 
+  elsif selection1 == "paper" && selection2 == "rock"
+    result = "Player 1, WINS!"
+
+  elsif selection1 == "scissors" && selection2 == "rock" || 
+  elsif selection1 == "paper" && selection2 == "scissors" || 
+  elsif selection1 == "rock" && selection2 == "paper"
+    result = "Player 2, WINS!"
+
+  elsif selection1 == selection2
+    result = "TIE. TRY AGAIN."
+  result
 end
-            
+
+
+
+#currently doesn't display any victory messages, just ends after game without saying who won
     
     
     
