@@ -39,11 +39,3 @@ class Player < Minitest::Test
   	assert_equal(2, player.ties)
   end
 end
-
-# def test_kill_another_rabbit
-#     dog = Dog.new(name: "Pharaoh", age: 4, species: "Weimaraner", gender: "male", 
-#          tail: "docked", legs: 4, eyes: 2, ears: 2, license: 123456, rabbits_killed: 17)
-    
-#     dog.kill_another_rabbit
-#     assert_equal(18, dog.rabbits_killed)
-#   end
