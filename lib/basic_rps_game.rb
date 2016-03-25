@@ -36,7 +36,7 @@ end
 def make_selection
   selection = nil
   while selection != "rock" && selection != "paper" && selection != "scissors"
-    puts "Hint: Type rock, paper, or scissors."
+    puts "Hint: Type rock, paper, or scissors.\n"
     selection = gets.chomp
   end
   selection
