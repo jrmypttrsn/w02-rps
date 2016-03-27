@@ -1,7 +1,7 @@
 require "pry"
 require_relative "player.rb"
 
-class Game
+class Rules
 	if selection1 == "rock" && selection2 == "scissors" || 
     selection1 == "scissors" && selection2 == "paper" || 
     selection1 == "paper" && selection2 == "rock"
