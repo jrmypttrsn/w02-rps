@@ -4,12 +4,12 @@ class Player
 
   attr_accessor :name, :wins, :weapon, :losses, :ties
 
-  def initialize(name:, wins:, weapon:, losses:, ties:)
+  def initialize(name:)
     @name = name
-    @wins = wins
+    @wins = 0
     @weapon = nil
-    @losses = losses
-    @ties = ties
+    @losses = 0
+    @ties = 0
   end
 
 #choose_weapon method allows player to type their selection
@@ -29,15 +29,9 @@ class Player
     weapon
   end
 
-  def win_another_round
-    @wins += 1    
+  def wins_a_round
+    @wins += 1
   end
 
-  def lose_another_round
-    @losses += 1    
-  end
 
-  def tie_another_round
-    @ties += 1
-  end
 end
