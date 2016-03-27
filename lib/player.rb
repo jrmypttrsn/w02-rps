@@ -33,5 +33,12 @@ class Player
     @wins += 1
   end
 
+  def ties_a_round
+    @ties += 1
+  end
+
+  def loses_a_round
+    @losses +=1
+  end
 
 end
