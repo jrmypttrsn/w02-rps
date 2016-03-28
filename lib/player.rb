@@ -12,21 +12,24 @@ class Player
     @ties = 0
   end
 
-#choose_weapon method allows player to type their selection
-#
-#
-#returns toss as a "r" for rock, "s" for scissor, "p" for paper.
 
-# if the user does not enter a selection a hint will remind them to do so
-#
-# returns the players selection once they've entered a valid selection
-  def choose_weapon
-    weapon =nil 
-    while weapon != "rock" && weapon != "paper" && weapon != "scissors"
-      print "Type 'rock', 'paper', or 'scissors'.\n\n"
-      weapon = gets.chomp.downcase
+  def input(available_weapons)
+    puts "\n\nChoose a weapon:"
+    acceptable_choices.each { |e| puts e}
+    print ">"
+    gets.chomp.downcase
+  end
+
+  def choose_weapon(rules_of_game)
+    available_weapons = rules_of_game.available_weapons
+    choice = input(available_weapons)
+    available = valid?(choice, available_weapons)
+    while !available do
+      puts "\n'#{choice}' is not an option."
+      choice = input(available_weapons)
+      available = valid?(choice, available_weapons)
     end
-    weapon
+    @weapon = choice
   end
 
   def wins_a_round
